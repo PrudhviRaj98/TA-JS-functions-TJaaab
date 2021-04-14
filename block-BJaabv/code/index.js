@@ -8,12 +8,10 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge(dogAge, humanAge) {
-  dogAge = humanAge / 7;
-  humanAge = dogAge * 7;
-  console.log(`Dog's age in human years is ${dogAge}`); 
-  console.log(`Human's age in dog years is ${humanAge}`); 
+function calculateDogAge(puppyAge, conversion = 7) {
+  return puppyAge * conversion
 }
+console.log(calculateDogAge(10,5));
 
 /*
 2. 🎖Write a function named calculateMoviesToWatch that:
@@ -22,14 +20,10 @@ function calculateDogAge(dogAge, humanAge) {
   * [ ] Return the total number of movie you will watch.
 */
 
-function calculateMoviesToWatch(age , movies) {
-  let week;
-  week = movies * 4;
-  let month ;
-  month = 12 * week;
-  let moviesWatched;
-  moviesWatched = age * month;
-  return moviesWatched;
+function calculateMoviesToWatch(age , noOfMovies) {
+  const MAX_AGE = 80;
+  let totalNumberOfMovies = (MAX_AGE - age) * 12 * 4 * noOfMovies;
+  return totalNumberOfMovies;
 }
 
 calculateMoviesToWatch(21 , 2);
@@ -91,8 +85,22 @@ pow(-31, 2); // "The number below 1 is not allowed"
 and return sum or product of 1,…,n. If user enters any other value than `sum` or `product` alert `Not a valid Input`.
 */
 
-function sumOrProductOfN(n , word) {
-  
+function sumOrProductOfN(num , operation) {
+   if (operation === "sum"){
+     let sum = 0;
+     for (let i = 1; i <=num; i++){
+       sum = sum + i;
+     }
+     return sum
+   }else if (operation === product){
+     let product = 1;
+     for (let i = 1; i <= num; i++){
+       product *=i;
+     }
+     return product;
+   }else{
+     alert(`not a valid input`);
+   }
 }
 
 sumOrProductOfN(4, 'sum'); // 10
@@ -119,7 +127,7 @@ function sumOfN(n) {
 function sumOfN(n) {
   let sum = 0;
   for(let i = 0 ; i <= n ; i++){
-    if(i % 5 == 0 || i % 7 == 0){
+    if(i % 5 === 0 || i % 7 === 0){
       sum = sum + i;
     }  
   }
