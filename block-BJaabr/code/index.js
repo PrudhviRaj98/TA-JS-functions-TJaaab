@@ -248,31 +248,31 @@ Do the following with above problem.
 // - Write a Function Declaration
 
 function oddOrEven (number){
-  return number % 2 == 0? even : odd;
+  return number % 2 === 0? "even" : "odd";
 }
 
 // - Write an anonymous Function Expression
 
 let oddOrEven = function (number){
-  return number % 2 == 0? even : odd;
+  return number % 2 === 0? "even" : "odd";
 }
 
 // - Write an named Function Expression
 
-let oddOrEven = function (number){
-  return number % 2 == 0? even : odd;
+let oddOrEven = function isOdd (number){
+  return number % 2 === 0? "even" : "odd";
 }
 
 
 // - Write an Arrow Function without curly brackets (hint: use ternary operator)
 
-let oddOrEven = (number) => number % 2 == 0? even : odd;
+let oddOrEven = (number) => number % 2 === 0? "even : odd";
 
 
 // - Write an Arrow Function with curly brackets
 
 let oddOrEven = (number) =>{
- return number % 2 == 0? even : odd;
+ return number % 2 === 0? "even" : "odd";
 } 
 
 // - Execute the function
